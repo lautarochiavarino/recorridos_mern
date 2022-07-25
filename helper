@@ -1,0 +1,4 @@
+docker logs -f nro_container ver error en tiempo real
+docker ps
+docker-compose up -d
+docker exec -it nro_container bash
