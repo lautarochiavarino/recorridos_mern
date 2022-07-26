@@ -2,3 +2,12 @@ docker logs -f nro_container ver error en tiempo real
 docker ps
 docker-compose up -d
 docker exec -it nro_container bash
+
+mongodb
+show dbs
+use recorridos
+show collections
+db.users.find().pretty();
+
+"mongoURI": "mongodb+srv://lautaro:ViValapepa@recorridos.bncdjuu.mongodb.net/?retryWrites=true&w=majority"
+"mongoURI": "mongodb://mongo:27017/recorridos"
