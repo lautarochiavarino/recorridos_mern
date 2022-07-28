@@ -2,22 +2,19 @@ const mongoose = require("mongoose");
 
 const PlaceSchema = new mongoose.Schema(
   {
-    tour:{
-      type: moongose.Schema.Types.ObjectId,
-      ref: 'tour'
+    tour: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "tour",
     },
     address: {
-      type: [String],
-      required: true
+      type: String,
+      required: true,
     },
   },
- 
-
-
 
   {
     timestamps: true,
   }
 );
 
-module.exports = User = mongoose.model('user', UserSchema);
+module.exports = Place = mongoose.model("place", PlaceSchema);
