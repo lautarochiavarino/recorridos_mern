@@ -8,6 +8,7 @@ show dbs
 use recorridos
 show collections
 db.users.find().pretty();
+db.users.remove({"email":"lautarochiavarino@gmail.com"})
 
 "mongoURI": "mongodb+srv://lautaro:ViValapepa@recorridos.bncdjuu.mongodb.net/?retryWrites=true&w=majority"
 "mongoURI": "mongodb://mongo:27017/recorridos"

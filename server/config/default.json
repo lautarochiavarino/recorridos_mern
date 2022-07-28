@@ -1,3 +1,4 @@
 {
-"mongoURI": "mongodb://mongo:27017/recorridos"
+"mongoURI": "mongodb://mongo:27017/recorridos",
+"jwtSecret": "mysecrettoken"
 }
