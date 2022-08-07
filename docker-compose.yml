@@ -3,7 +3,13 @@ services:
   react-app:
     image: react-app
     stdin_open: true
-    ports: 
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules # Remove this if you have pure JS dependencies
+    ports:
       - "3000:3000"
     networks:
       - mern-app

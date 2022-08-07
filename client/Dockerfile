@@ -1,14 +1,14 @@
-# FROM node:14-slim
+FROM node:16-slim
 
-# WORKDIR /usr/src/app
+WORKDIR /usr/src/app
 
-# COPY ./package.json ./
-# COPY ./package-lock.json ./
+COPY ./package.json ./
+COPY ./package-lock.json ./
 
-# RUN npm install
+RUN npm install
 
-# COPY . .
+COPY . .
 
-# EXPOSE 3000
+EXPOSE 3000
 
-# CMD [ "npm", "start" ]
+CMD [ "npm","run","server"]

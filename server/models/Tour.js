@@ -10,6 +10,14 @@ const TourSchema = new mongoose.Schema(
       type: Date,
       required: true,
     },
+    places: {
+      type: [String],
+      required: true
+    },
+    activities: {
+      type: [String],
+      required: true
+    },
   },
   {
     timestamps: true,
