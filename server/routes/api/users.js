@@ -1,23 +1,23 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const { check, validationResult } = require("express-validator");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const config = require("config");
+const { check, validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const config = require('config');
 
-const User = require("../../models/User");
+const User = require('../../models/User');
 
 //  @route      POST api/users
 //  @desc       Register Route
 //  @access     Public
 
 router.post(
-  "/",
+  '/',
   [
-    check("email", "Por favor ingrese un E-mail valido").isEmail(),
+    check('email', 'Por favor ingrese un E-mail valido').isEmail(),
     check(
-      "password",
-      "El password debe contener 6 caracteres como mínimo"
+      'password',
+      'El password debe contener 6 caracteres como mínimo'
     ).isLength({ min: 6 }),
   ],
   async (req, res) => {
@@ -33,7 +33,7 @@ router.post(
       let user = await User.findOne({ email });
 
       if (user) {
-        return res.status(400).json({ errors: [{ msg: "El usuario ya existe" }] });
+        return res.status(400).json({ errors: [{ msg: 'El usuario ya existe' }] });
       }
  
       user = new User({
@@ -67,7 +67,7 @@ router.post(
     
     } catch (err) {
       console.error(err.message);
-      res.status(500).send("Server Error");
+      res.status(500).send('Server Error');
     }
   }
 );
