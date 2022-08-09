@@ -1,15 +1,16 @@
 import React, { Fragment, useState } from 'react';
-import axios from 'axios';
+import {Link} from 'react-router-dom';
+// import axios from 'axios';
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    name: '',
+  
     email: '',
     password: '',
     password2: '',
   });
 
-  const { name, email, password, password2 } = formData;
+  const { email, password, password2 } = formData;
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,24 +21,28 @@ const Register = () => {
         console.log('Passwords do not match');
 
       }else{
-       const newUser ={
-        email,
-        password
-       };
+      //  const newUser ={
+      //   email,
+      //   password
+      //  };
 
-       try {
-        const config = {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        };
+      //  try {
+      //   const config = {
+      //     headers: {
+      //       'Content-Type': 'application/json'
+      //     }
 
-        const body = JSON.stringify(newUser);
-        const res = await axios.post('http://localhost:5000/api/users', body, config);
-        console.log(res.data);
-       } catch (err) {
-        console.error(err.response.data);
-       }
+       
+      //   };
+
+      //   const body = JSON.stringify(newUser);
+      //   const res = await axios.post('http://localhost:5000/api/users', body, config);
+      //   console.log(res.data);
+      //  } catch (err) {
+      //   console.error(err.response.data);
+      //  }
+
+      console.log('succes');
       }
     };
 
@@ -83,7 +88,7 @@ const Register = () => {
           <input type='submit' className='btn btn-primary' value='Registrar' />
         </form>
         <p className='my-1'>
-          Ya estás registrado? <a href='login.html'>Iniciar Sesión</a>
+          Ya estás registrado? <Link to='/login'>Iniciar Sesión</Link>
         </p>
       </section>
     </Fragment>
