@@ -24,7 +24,7 @@ const Login = () => {
 
   return (
     <Fragment>
-      <section className='container'>
+      
         <h1 className='large text-primary'>Iniciar Sesión</h1>
         <p className='lead'>
           <i className='fas fa-user'></i> Ingrese su cuenta
@@ -57,7 +57,7 @@ const Login = () => {
         <p className='my-1'>
           No tenes cuenta? <Link to ='/register'>Registrarse</Link>
         </p>
-      </section>
+     
     </Fragment>
   );
 };
